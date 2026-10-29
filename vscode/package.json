@@ -1,0 +1,48 @@
+{
+  "name": "humc-language-support",
+  "displayName": "HumC Language Support",
+  "description": "Syntax highlighting, indentation rules and snippets for the HumC programming language.",
+  "version": "1.0.0",
+  "publisher": "humc",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets"
+  ],
+  "keywords": [
+    "humc",
+    "language",
+    "syntax-highlighting",
+    "snippets"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "humc",
+        "aliases": [
+          "HumC",
+          "humc"
+        ],
+        "extensions": [
+          ".humc"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "humc",
+        "scopeName": "source.humc",
+        "path": "./syntaxes/humc.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "humc",
+        "path": "./snippets/humc.json"
+      }
+    ]
+  }
+}

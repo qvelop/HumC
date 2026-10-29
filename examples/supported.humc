@@ -1,0 +1,23 @@
+// Syntax currently supported by the native compiler prototype.
+
+fn add(int a, int b) -> int
+    return a + b
+
+fn main
+    let answer = add(20, 22)
+    let message: const char * = "Hello from HumC"
+
+    print message
+    print answer
+
+    if answer > 40
+        print "answer is greater than 40"
+    elif answer == 40
+        print "answer is exactly 40"
+    else
+        print "answer is smaller than 40"
+
+    for i in 0..3
+        print i
+
+    return 0

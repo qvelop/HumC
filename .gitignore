@@ -1,0 +1,5 @@
+build/
+build-sanitize/
+node_modules/
+humc
+*.vsix

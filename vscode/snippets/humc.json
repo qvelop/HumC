@@ -1,0 +1,177 @@
+{
+  "Main function": {
+    "prefix": "main",
+    "body": [
+      "fn main",
+      "\t$0"
+    ],
+    "description": "Create the HumC main function"
+  },
+  "Function": {
+    "prefix": "fn",
+    "body": [
+      "fn ${1:name}(${2:int value}) -> ${3:int}",
+      "\t$0"
+    ],
+    "description": "Create a typed HumC function"
+  },
+  "Function returning a value": {
+    "prefix": "fnret",
+    "body": [
+      "fn ${1:add}(int ${2:a}, int ${3:b}) -> int",
+      "\treturn ${2:a} + ${3:b}"
+    ],
+    "description": "Create a function that returns a value"
+  },
+  "Let variable": {
+    "prefix": "let",
+    "body": [
+      "let ${1:name} = ${2:value}$0"
+    ],
+    "description": "Declare an inferred HumC variable"
+  },
+  "Typed let variable": {
+    "prefix": "lett",
+    "body": [
+      "let ${1:name}: ${2:int} = ${3:0}$0"
+    ],
+    "description": "Declare a variable with an explicit C type"
+  },
+  "Print expression": {
+    "prefix": "print",
+    "body": [
+      "print ${1:expression}$0"
+    ],
+    "description": "Print an expression"
+  },
+  "Print string": {
+    "prefix": "prints",
+    "body": [
+      "print \"${1:Hello from HumC!}\"$0"
+    ],
+    "description": "Print a string literal"
+  },
+  "If statement": {
+    "prefix": "if",
+    "body": [
+      "if ${1:condition}",
+      "\t$0"
+    ],
+    "description": "Create an if block"
+  },
+  "If / else statement": {
+    "prefix": "ifelse",
+    "body": [
+      "if ${1:condition}",
+      "\t${2:print \"yes\"}",
+      "else",
+      "\t$0"
+    ],
+    "description": "Create an if / else block"
+  },
+  "If / elif / else statement": {
+    "prefix": "ifelif",
+    "body": [
+      "if ${1:first_condition}",
+      "\t${2:print \"first\"}",
+      "elif ${3:second_condition}",
+      "\t${4:print \"second\"}",
+      "else",
+      "\t$0"
+    ],
+    "description": "Create an if / elif / else chain"
+  },
+  "While loop": {
+    "prefix": "while",
+    "body": [
+      "while ${1:condition}",
+      "\t$0"
+    ],
+    "description": "Create a while loop"
+  },
+  "While loop with counter": {
+    "prefix": "whilei",
+    "body": [
+      "let ${1:i} = 0",
+      "while ${1:i} < ${2:10}",
+      "\t$0",
+      "\t${1:i}++"
+    ],
+    "description": "Create a counter-based while loop"
+  },
+  "For each item in array": {
+    "prefix": "forin",
+    "body": [
+      "for ${1:item} in ${2:items}",
+      "\t$0"
+    ],
+    "description": "Iterate through an array"
+  },
+  "For numeric range": {
+    "prefix": "forrange",
+    "body": [
+      "for ${1:i} in ${2:0}..${3:10}",
+      "\t$0"
+    ],
+    "description": "Iterate over an exclusive numeric range"
+  },
+  "Array literal": {
+    "prefix": "array",
+    "body": [
+      "let ${1:numbers} = [${2:1, 2, 3}]$0"
+    ],
+    "description": "Create an array from numeric literals"
+  },
+  "Break statement": {
+    "prefix": "break",
+    "body": [
+      "break$0"
+    ],
+    "description": "Exit the current loop"
+  },
+  "Continue statement": {
+    "prefix": "continue",
+    "body": [
+      "continue$0"
+    ],
+    "description": "Skip to the next loop iteration"
+  },
+  "Return statement": {
+    "prefix": "return",
+    "body": [
+      "return ${1:value}$0"
+    ],
+    "description": "Return a value from a function"
+  },
+  "Switch statement": {
+    "prefix": "switch",
+    "body": [
+      "switch ${1:value}",
+      "\tcase ${2:1}",
+      "\t\t${3:print \"one\"}",
+      "\tcase ${4:2}",
+      "\t\t${5:print \"two\"}",
+      "\tdefault",
+      "\t\t$0"
+    ],
+    "description": "Create a switch / case block"
+  },
+  "C header include": {
+    "prefix": "include",
+    "body": [
+      "#include <${1:stdio.h}>$0"
+    ],
+    "description": "Include a C header preserved in generated C"
+  },
+  "HumC program example": {
+    "prefix": "humc",
+    "body": [
+      "// ${1:Program description}",
+      "fn main",
+      "\tlet name = \"Bob\"",
+      "\tprint \"Hello \" + name",
+      "\t$0"
+    ],
+    "description": "Insert a small HumC program"
+  }
+}
